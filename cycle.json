@@ -1,0 +1,46 @@
+{
+"version": "1.0",
+"about": {
+    "version": "1.0",
+    "description": "demo stack"
+},
+"scoped_variables": [],
+"containers": {
+    "agent": {
+        "name": "agent",
+        "image": {
+            "name": "agent",
+            "origin": {
+                "type": "oci-registry",
+                "details": {
+                    "target": "alpine:latest",
+                    "url": "187459447151.dkr.ecr.us-east-2.amazonaws.com",
+                    "auth": {
+                        "type": "provider",
+                        "details": {
+                            "flavor": "ecr",
+                            "credentials": {
+                                "api_key": "AKIASXJLUFFXZLNCM3EE",
+                                "secret": "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",
+                                "region": "us-east-2"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "config": {
+            "network": {
+                "public": "enable",
+                "hostname": "some-hostname",
+                "ports": [
+                    "443:5000"
+                ]
+            },
+            "deploy": {
+                "instances": 1
+            }
+        }
+    }
+}
+}
